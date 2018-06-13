@@ -6,6 +6,8 @@ stream create --name filtertest --definition "http | filter --expression=payload
 
 expression="#jsonPath(payload,'$.name') matches '\d*'
 
+filter --expression="!payload.description.equals('invalid order')"
+
 ```
 
 ```shell
